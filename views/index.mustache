@@ -6,18 +6,15 @@
     <title>Users</title>
   </head>
   <body>
-    <p>Robot Directory</p>
 
     <main class="usersMain">
       {{#robot}}
-      <a href="/{{id}}">home</a>
+      <a href="{{username}}"</a>
       <!-- <a href="/{{id}}"><img src={{avatar}}></a> -->
 
           <div class="robot">
             <img src={{avatar}} />
-            <h2>
-
-            </h2>
+            <h2>{{name}}</h2>
 
             {{#job}}
               <p>
@@ -26,7 +23,7 @@
               </p>
             {{/job}}
 
-            {{#job}}
+            {{^job}}
               <p class="unemployed">
                 Available for hire
               </p>

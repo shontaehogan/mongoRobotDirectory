@@ -16,11 +16,12 @@ console.log("test")
 
 console.log("test2")
 
-routes.get('/:search', (req, res) => {
+routes.get('/:username', (req, res) => {
   let collection2 = db.get().collection('robot');
 
-  collection2.findOne({username: req.params.search}, (err, robot) => {
-    res.render('userInfo', robot);
+  collection2.find({username: req.params.username}).toArray((err, robot) => {
+    res.render('userInfo', {robot: robot});
+    console.log(req.params.username);
   });
 });
 console.log("test3")
